@@ -27,6 +27,9 @@ public class PerfectPower {
             Double potega = Math.pow(n, 1.0/i);
             Long root = Math.round(potega);
 
+            if(potega < 2){
+                return null;
+            }
             if(Double.compare(Math.pow(root, i), n) == 0){
                 return new int[]{root.intValue(), i};
             }
