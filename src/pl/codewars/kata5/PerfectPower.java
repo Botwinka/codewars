@@ -23,15 +23,15 @@ public class PerfectPower {
      * @return
      */
     public static int[] isPerfectPower(int n) {
-        for(int i = 2; i < n; i++){
-            Double potega = Math.pow(n, 1.0/i);
+        for(int power = 2; power < n; power++){
+            Double potega = Math.pow(n, 1.0/power);
             Long root = Math.round(potega);
 
             if(potega < 2){
                 return null;
             }
-            if(Double.compare(Math.pow(root, i), n) == 0){
-                return new int[]{root.intValue(), i};
+            if(Double.compare(Math.pow(root, power), n) == 0){
+                return new int[]{root.intValue(), power};
             }
         }
         return null;
